@@ -2,14 +2,19 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 
 const FirstScreen = () => {
-    return (        
-        <View>
-            <Text>
-                // This is an example of an Element written in a Javascript Function
-                Hello World!
+    return (
+        <View style={{
+            flex: 1,
+            alignItems: 'center',
+            justifyContent: 'center'
+        }}>
+            <Text style={{ margin: 16 }}>
+                Hello
+                <Text style={{ color: 'red' }}> World</Text>
+                !
             </Text>
 
-            <Button title="This is button"/>
+            <Button title="This is button" />
         </View>
     )
 };
