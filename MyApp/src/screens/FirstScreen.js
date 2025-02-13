@@ -2,6 +2,11 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 
 const FirstScreen = () => {
+
+    const openAlert = () => {
+        alert('You clicked the button!');
+    };
+
     return (
         <View style={{
             flex: 1,
@@ -14,7 +19,10 @@ const FirstScreen = () => {
                 !
             </Text>
 
-            <Button title="This is button" />
+            <Button
+                title="This is button"
+                onPress={openAlert}
+            />
         </View>
     )
 };
