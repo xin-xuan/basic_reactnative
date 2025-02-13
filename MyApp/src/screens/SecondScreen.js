@@ -3,13 +3,16 @@ import { View, Text } from 'react-native';
 
 const SecondScreen = () => {
     return (
-        <View>
-            <View>
+        <View style={{
+            flex: 1,
+            backgroundColor: 'lavender'
+        }}>
+            <View style={{backgroundColor: 'skyblue'}}>
                 <Text>
                     Mobile Legends
                 </Text>
             </View>
-            <View>
+            <View style = {{backgroundColor: 'cornflowerblue'}}>
                 <Text>
                     PUBG
                 </Text>
