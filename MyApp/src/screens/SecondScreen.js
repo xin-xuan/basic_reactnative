@@ -3,8 +3,12 @@ import { View, Text, TouchableOpacity } from 'react-native';
 
 const SecondScreen = () => {
 
-    const openAlert = () => {
-        alert('You chose Mobile Legends!');
+    const openAlert = (game) => {
+        if (game == 'moba') {
+            alert('You chose Mobile Legends!');
+        } else if (game == 'pubg') {
+            alert('You chose PUBG!');
+        }
     };
 
     return (
@@ -46,7 +50,7 @@ const SecondScreen = () => {
                     borderRadius: 50,
                     borderWidth: 2,
                 }}
-                onPress={() => openAlert()}>
+                onPress={() => openAlert('moba')}>
                 <Text style={{ color: 'lightcoral' }}>
                     Mobile Legends Button
                 </Text>
@@ -76,6 +80,22 @@ const SecondScreen = () => {
                     <Text style={{ color: 'purple' }}>PlayerUnknown's Battlegrounds</Text>, better known as PUBG, is a multiplayer battle royale game in which players drop onto an island and fight to be the last one left standing.
                 </Text>
             </View>
+
+            <TouchableOpacity
+                style={{
+                    backgroundColor: 'white',
+                    padding: 8,
+                    margin: 8,
+                    borderRadius: 50,
+                    borderWidth: 2,
+                }}
+
+                onPress={() => openAlert('pubg')}>
+                <Text style={{ color: 'lightcoral' }}>
+                    PUBG Button
+                </Text>
+
+            </TouchableOpacity>
         </View>
     )
 };
