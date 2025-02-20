@@ -1,7 +1,12 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 const SecondScreen = () => {
+
+    const openAlert = () => {
+        alert('You chose Mobile Legends!');
+    };
+
     return (
         <View style={{
             flex: 1,
@@ -29,10 +34,26 @@ const SecondScreen = () => {
                 <Text style={{
                     textAlign: 'justify'
                 }}>
-                <Text style={{color: 'purple'}}>Mobile Legends</Text> is a multiplayer online battle arena (MOBA) game. The two opposing teams fight to reach and destroy the enemy's base while defending their own base for control of a path.
+                    <Text style={{ color: 'purple' }}>Mobile Legends</Text> is a multiplayer online battle arena (MOBA) game. The two opposing teams fight to reach and destroy the enemy's base while defending their own base for control of a path.
                 </Text>
             </View>
-            <View style = {{
+
+            <TouchableOpacity
+                style={{
+                    backgroundColor: 'white',
+                    padding: 8,
+                    margin: 8,
+                    borderRadius: 50,
+                    borderWidth: 2,
+                }}
+                onPress={() => openAlert()}>
+                <Text style={{ color: 'lightcoral' }}>
+                    Mobile Legends Button
+                </Text>
+
+            </TouchableOpacity>
+
+            <View style={{
                 backgroundColor: 'cornflowerblue',
                 padding: 10,
                 marginTop: 5,
@@ -43,7 +64,7 @@ const SecondScreen = () => {
                 borderColor: 'red',
                 borderWidth: 1
             }}>
-                <Text style = {{
+                <Text style={{
                     fontWeight: 'bold'
                 }}>
                     PUBG
@@ -52,7 +73,7 @@ const SecondScreen = () => {
                 <Text style={{
                     textAlign: 'justify'
                 }}>
-                <Text style={{color: 'purple'}}>PlayerUnknown's Battlegrounds</Text>, better known as PUBG, is a multiplayer battle royale game in which players drop onto an island and fight to be the last one left standing.
+                    <Text style={{ color: 'purple' }}>PlayerUnknown's Battlegrounds</Text>, better known as PUBG, is a multiplayer battle royale game in which players drop onto an island and fight to be the last one left standing.
                 </Text>
             </View>
         </View>
