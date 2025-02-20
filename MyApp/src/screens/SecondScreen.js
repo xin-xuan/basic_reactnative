@@ -13,9 +13,14 @@ const SecondScreen = () => {
                 backgroundColor: 'skyblue',
                 padding: 10,
                 marginBottom: 5,
-                borderStyle: 'dashed'
+                borderStyle: 'dashed',
+                borderRadius: 10,
+                borderColor: 'red',
+                borderWidth: 1
             }}>
-                <Text>
+                <Text style={{
+                    fontWeight: 'bold'
+                }}>
                     Mobile Legends
                 </Text>
             </View>
@@ -23,10 +28,14 @@ const SecondScreen = () => {
                 backgroundColor: 'cornflowerblue',
                 padding: 10,
                 marginTop: 5,
-                borderStyle: 'dotted'
-
+                borderRadius: 10,
+                borderStyle: 'dotted',
+                borderColor: 'red',
+                borderWidth: 1
             }}>
-                <Text>
+                <Text style = {{
+                    fontWeight: 'bold'
+                }}>
                     PUBG
                 </Text>
             </View>
