@@ -8,9 +8,9 @@ const FourthScreen = () => {
                 width: '100%',
                 height: 300,
                 justifyContent: 'flex-end',
-                alignItems: 'flex-start'
+                alignItems: 'flex-end'
             }}
-                imageStyle={{ borderRadius: 10 }}
+                imageStyle={{ borderRadius: 10, opacity: 0.5 }}
                 source={{ uri: 'https://wallpaperaccess.com/full/250180.jpg' }}>
 
                 <Text style={{
