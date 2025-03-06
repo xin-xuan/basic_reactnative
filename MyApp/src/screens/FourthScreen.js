@@ -39,6 +39,13 @@ const FourthScreen = () => {
                 placeholder="Phone number"
                 keyboardType="numeric"
             />
+
+            <InputComponent
+                title='Location'
+                height={40}
+                placeholder="Location"
+                keyboardType="default"
+            />
         </View>
     )
 };
