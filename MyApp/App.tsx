@@ -5,6 +5,7 @@ import SecondScreen from './src/screens/SecondScreen';
 import ThirdScreen from './src/screens/ThirdScreen';
 import ImageScreen from './src/screens/ThirdScreen';
 import FourthScreen from './src/screens/FourthScreen';
+import InstagramHomeScreen from './src/screens/InstagramHomeScreen';
 
 const App = () => {
     return (
@@ -13,7 +14,8 @@ const App = () => {
              {/* <FirstScreen/> */}
              {/* <SecondScreen/> */}
              {/* <ImageScreen/> */}
-             <FourthScreen/>
+             {/* <FourthScreen/> */}
+             <InstagramHomeScreen/>
 
         </SafeAreaProvider> 
     )
