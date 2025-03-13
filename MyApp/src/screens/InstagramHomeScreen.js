@@ -16,15 +16,24 @@ const InstagramHomeScreen = () => {
                     }}>
                     Instagram
                 </Text>
+
                 <View style={{
                     flexDirection: 'row',
                     alignItems: 'center', marginRight: 8
                 }}>
+
                     <View style={{ margin: 8 }}>
-                        <Icon name='plus-square-o'
-                            type='font-awesome' size={26}
-                        />
+                        <Icon name='plus-square-o' type='font-awesome' size={26} />
                     </View>
+
+                    <View style={{ margin: 8 }}>
+                        <Icon name='heart-o' type='font-awesome' size={26} />
+                    </View>
+
+                    <View style={{ margin: 8 }}>
+                        <Icon name='paper-plane-outline' type='ionicon' size={26} />
+                    </View>
+
                 </View>
             </View >
         </View >
