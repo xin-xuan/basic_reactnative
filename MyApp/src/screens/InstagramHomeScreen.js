@@ -44,7 +44,31 @@ const InstagramHomeScreen = () => {
                     <Feed
                         profile={require('../../assets/images/profilePicture1.png')}
                         username='catherine'
-                        post={{uri: 'https://wallpaperaccess.com/full/201215.jpg'}}
+                        post={{ uri: 'https://wallpaperaccess.com/full/201215.jpg' }}
+                    />
+
+                    <Feed
+                        profile={require('../../assets/images/profilePicture2.png')}
+                        username='brad'
+                        post={{ uri: 'https://images4.alphacoders.com/292/292026.jpg' }}
+                    />
+
+                    <Feed
+                        profile={require('../../assets/images/profilePicture3.png')}
+                        username='cindy'
+                        post={{ uri: 'https://wallpaperaccess.com/full/496881.jpg' }}
+                    />
+
+                    <Feed
+                        profile={require('../../assets/images/profilePicture4.png')}
+                        username='ali'
+                        post={{ uri: 'https://images5.alphacoders.com/316/316297.jpg' }}
+                    />
+
+                    <Feed
+                        profile={require('../../assets/images/profilePicture5.png')}
+                        username='siti'
+                        post={{ uri: 'https://i.ibb.co/bLz74hj/psyduck.png' }}
                     />
                 </ScrollView>
             </View>
