@@ -1,6 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { Icon } from 'react-native-elements';
+import { Feed } from '../components/InstagramComponent';
+import { ScrollView } from 'react-native';
 
 const InstagramHomeScreen = () => {
     return (
@@ -36,6 +38,17 @@ const InstagramHomeScreen = () => {
 
                 </View>
             </View >
+
+            <View style={{ flex: 1 }}>
+                <ScrollView>
+                    <Feed
+                        profile={require('../../assets/images/profilePicture1.png')}
+                        username='catherine'
+                        post={{uri: 'https://wallpaperaccess.com/full/201215.jpg'}}
+                    />
+                </ScrollView>
+            </View>
+
         </View >
     )
 };
