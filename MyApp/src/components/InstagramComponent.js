@@ -43,19 +43,33 @@ export const Feed = (props) => {
             }}>
                 <View style={{ flexDirection: 'row' }}>
                     <View style={{ margin: 8 }}>
-                        <Icon name='heart-o' type='font-awesome' size={26}/>
+                        <Icon name='heart-o' type='font-awesome' size={26} />
                     </View>
                     <View style={{ margin: 8 }}>
-                        <Icon name='comment-o' type='font-awesome' size={26}/>
+                        <Icon name='comment-o' type='font-awesome' size={26} />
                     </View>
                     <View style={{ margin: 8 }}>
-                        <Icon name='paper-plane-outline' type='ionicon' size={26}/>
+                        <Icon name='paper-plane-outline' type='ionicon' size={26} />
                     </View>
                 </View>
                 <View style={{ margin: 8 }}>
-                    <Icon name='bookmark-o' type='font-awesome' size={26}/>
+                    <Icon name='bookmark-o' type='font-awesome' size={26} />
                 </View>
             </View>
         </View>
     )
 };
+
+export const Story = (props) => {
+    const { username, profile } = props;
+
+    return (
+        <View style={{ marginRight: 8, alignItems: 'center' }}>
+            <Image
+                style={{ width: 80, height: 80, borderRadius: 100 }}
+                source={profile}
+            />
+            <Text>{username}</Text>
+        </View>
+    )
+}
