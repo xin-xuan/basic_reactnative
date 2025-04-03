@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import { countryList, objectImageList, objectNameList } from '../../data/Data';
 
 const GuessTheCountryScreen = () => {
+
     const [answer, setAnswer] = useState('');
+    const [index, setIndex] = useState(0);
+
+    const randomIndex = () => {
+        const pickRandomIndex = Math.floor(Math.random() * countryList.length);
+        setIndex(pickRandomIndex);
+    }
+
+    useEffect(() => {
+        randomIndex();
+    }, []);
+
     return (
         <View style={{
             flex: 1,
@@ -24,7 +36,7 @@ const GuessTheCountryScreen = () => {
                     height: 250,
                     borderRadius: 10
                 }}
-                source={{ uri: objectImageList[0] }}
+                source={{ uri: objectImageList[index] }}
             />
             <View style={{
                 margin: 8,
@@ -33,7 +45,7 @@ const GuessTheCountryScreen = () => {
                 borderWidth: 1
             }}>
                 <Text style={{ fontSize: 18 }}>
-                    {objectNameList[0]}
+                    {objectNameList[index]}
                 </Text>
             </View>
             <View style={{
