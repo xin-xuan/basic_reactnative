@@ -24,7 +24,12 @@ const GuessTheCountryScreen = () => {
         else {
             setResult('false');
         }
-        randomIndex();
+
+        setTimeout(() => {
+            setResult('');
+            setAnswer('');
+            randomIndex();
+        }, 1500);
     }
 
     return (
@@ -71,6 +76,7 @@ const GuessTheCountryScreen = () => {
                     placeholder="Write your answer"
                     keyboardType='default'
                     onChangeText={(text) => setAnswer(text)}
+                    value={answer}
                 />
                 <TouchableOpacity
                     style={{
