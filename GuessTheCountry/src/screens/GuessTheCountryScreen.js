@@ -6,6 +6,7 @@ const GuessTheCountryScreen = () => {
 
     const [answer, setAnswer] = useState('');
     const [index, setIndex] = useState(0);
+    const [result, setResult] = useState('');
 
     const randomIndex = () => {
         const pickRandomIndex = Math.floor(Math.random() * countryList.length);
@@ -15,6 +16,16 @@ const GuessTheCountryScreen = () => {
     useEffect(() => {
         randomIndex();
     }, []);
+
+    const checkAnswer = () => {
+        if (answer.toLowerCase() === countryList[index]) {
+            setResult('true');
+        }
+        else {
+            setResult('false');
+        }
+        randomIndex();
+    }
 
     return (
         <View style={{
@@ -61,24 +72,27 @@ const GuessTheCountryScreen = () => {
                     keyboardType='default'
                     onChangeText={(text) => setAnswer(text)}
                 />
-                <TouchableOpacity style={{
-                    borderWidth: 1,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderRadius: 10,
-                    padding: 8,
-                    marginLeft: 8,
-                    marginBottom: 8,
-                    marginTop: 8,
-                    backgroundColor: 'skyblue'
-                }}>
+                <TouchableOpacity
+                    style={{
+                        borderWidth: 1,
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        borderRadius: 10,
+                        padding: 8,
+                        marginLeft: 8,
+                        marginBottom: 8,
+                        marginTop: 8,
+                        backgroundColor: 'skyblue'
+                    }}
+                    onPress={() => checkAnswer()}
+                >
                     <Text style={{ fontSize: 18 }}>
                         Submit
                     </Text>
                 </TouchableOpacity>
             </View>
 
-            <Text>{answer}</Text>
+            <Text>{result}</Text>
 
         </View>
     )
