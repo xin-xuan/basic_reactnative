@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 
 const GuessTheCountryScreen = () => {
+    const [answer, setAnswer] = useState('');
     return (
         <View style={{
             flex: 1,
@@ -44,6 +45,8 @@ const GuessTheCountryScreen = () => {
                         width: '50%',
                     }}
                     placeholder="Write your answer"
+                    keyboardType='default'
+                    onChangeText={(text) => setAnswer(text)}
                 />
                 <TouchableOpacity style={{
                     borderWidth: 1,
@@ -61,6 +64,9 @@ const GuessTheCountryScreen = () => {
                     </Text>
                 </TouchableOpacity>
             </View>
+
+            <Text>{answer}</Text>
+            
         </View>
     )
 };
