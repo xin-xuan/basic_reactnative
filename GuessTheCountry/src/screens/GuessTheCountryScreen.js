@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
+import { countryList, objectImageList, objectNameList } from '../../data/Data';
 
 const GuessTheCountryScreen = () => {
     const [answer, setAnswer] = useState('');
@@ -23,7 +24,7 @@ const GuessTheCountryScreen = () => {
                     height: 250,
                     borderRadius: 10
                 }}
-                source={{ uri: 'https://wallpaperaccess.com/full/180136.jpg' }}
+                source={{ uri: objectImageList[0] }}
             />
             <View style={{
                 margin: 8,
@@ -32,7 +33,7 @@ const GuessTheCountryScreen = () => {
                 borderWidth: 1
             }}>
                 <Text style={{ fontSize: 18 }}>
-                    Big Ben
+                    {objectNameList[0]}
                 </Text>
             </View>
             <View style={{
@@ -66,7 +67,7 @@ const GuessTheCountryScreen = () => {
             </View>
 
             <Text>{answer}</Text>
-            
+
         </View>
     )
 };
