@@ -1,9 +1,11 @@
 import React from 'react';
 import { View, Text, ImageBackground, Image, TouchableOpacity } from 'react-native';
 
-const WinScreen = () => {
+const WinScreen = (props) => {
+    const { navigation } = props;
+
     return (
-        <View style={{ flex: 100}}>
+        <View style={{ flex: 100 }}>
             <ImageBackground
                 source={{ uri: 'https://wallpaperaccess.com/full/154959.jpg' }}
                 style={{
@@ -18,12 +20,15 @@ const WinScreen = () => {
                     style={{ width: '100%', height: 200 }}
                 />
                 <View style={{
-                    borderWidth: 1, 
+                    borderWidth: 1,
                     backgroundColor: 'lime',
-                    padding: 8, 
-                    borderRadius:10}}>
+                    padding: 8,
+                    borderRadius: 10
+                }}>
 
-                    <TouchableOpacity>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('Home')}
+                    >
                         <Text style={{
                             textTransform: 'uppercase',
                             fontSize: 24,
