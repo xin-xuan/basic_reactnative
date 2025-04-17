@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, Image, TextInput, TouchableOpacity } from 'react-native';
 import { countryList, objectImageList, objectNameList } from '../../data/Data';
 
-const GuessTheCountryScreen = () => {
+const GuessTheCountryScreen = ({navigation}) => {
 
     const [answer, setAnswer] = useState('');
     const [index, setIndex] = useState(0);
     const [result, setResult] = useState('');
+    const [score, setScore] = useState(0);
 
     const randomIndex = () => {
         const pickRandomIndex = Math.floor(Math.random() * countryList.length);
@@ -30,7 +31,18 @@ const GuessTheCountryScreen = () => {
             setAnswer('');
             randomIndex();
         }, 1500);
+
+        if (answer.toLowerCase() === countryList[index]) {
+            setResult('true');
+            setScore(score + 10);
+        }
     }
+
+    useEffect(() => {
+        if (score === 50) {
+            navigation.navigate('Win');
+        }
+    }, [score]);
 
     return (
         <View style={{
@@ -99,6 +111,24 @@ const GuessTheCountryScreen = () => {
             </View>
 
             <Text>{result}</Text>
+
+            <View
+                style={{
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: 16
+                }}>
+                <View
+                    style={{
+                        borderWidth: 1,
+                        padding: 8,
+                        alignItems: 'center',
+                        backgroundColor: 'mistyrose',
+                        borderRadius: 20
+                    }}>
+                    <Text>Score : {score}</Text>
+                </View>
+            </View>
 
         </View>
     )
