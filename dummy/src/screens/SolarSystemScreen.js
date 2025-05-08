@@ -33,25 +33,26 @@ const SolarSystemScreen = () => {
                     source={require('../../assets/images/earth.png')}
 
                 />
-            </View>
 
-            <View style={{
-                flex: 1,
-                marginLeft: 8,
-                marginRight: 8,
-                justifyContent: 'center'
-            }}>
-
-                <Text style={{
-                    fontSize: 20,
-                    fontWeight: 'bold'
+                <View style={{
+                    flex: 1,
+                    marginLeft: 8,
+                    marginRight: 8,
+                    justifyContent: 'center'
                 }}>
-                    Earth
-                </Text>
 
-                <Text>
-                    Earth is the only place we know of so far that's inhabited by living thing.
-                </Text>
+                    <Text style={{
+                        fontSize: 20,
+                        fontWeight: 'bold'
+                    }}>
+                        Earth
+                    </Text>
+
+                    <Text>
+                        Earth is the only place we know of so far that's inhabited by living thing.
+                    </Text>
+                </View>
+                
             </View>
 
         </View>
