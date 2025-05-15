@@ -1,7 +1,8 @@
 import React from 'react';
-import { View, Text, ImageBackground, Image, ScrollView, TouchableOpacity } from 'react-native';
+import { View, Text, Image } from 'react-native';
 
-const PlanetComponent = (props) => {
+export const PlanetComponent = (props) => {
+    const { title, description, source } = props;
     return (
         <View style={{
             flexDirection: 'row',
@@ -32,11 +33,11 @@ const PlanetComponent = (props) => {
                     fontSize: 20,
                     fontWeight: 'bold'
                 }}>
-                    Earth
+                    {title}
                 </Text>
 
                 <Text>
-                    Earth is the only place we know of so far that's inhabited by living thing.
+                    {description}
                 </Text>
             </View>
 
