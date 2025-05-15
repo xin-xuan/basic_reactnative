@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, Image } from 'react-native';
 
 export const PlanetComponent = (props) => {
-    const { title, description, source } = props;
+    const { planetName, planetDescription, planetImage } = props;
     return (
         <View style={{
             flexDirection: 'row',
@@ -18,7 +18,7 @@ export const PlanetComponent = (props) => {
                     width: 100,
                     height: 100
                 }}
-                source={require('../../assets/images/earth.png')}
+                source={planetImage}
 
             />
 
@@ -33,11 +33,11 @@ export const PlanetComponent = (props) => {
                     fontSize: 20,
                     fontWeight: 'bold'
                 }}>
-                    {title}
+                    {planetName}
                 </Text>
 
                 <Text>
-                    {description}
+                    {planetDescription}
                 </Text>
             </View>
 
