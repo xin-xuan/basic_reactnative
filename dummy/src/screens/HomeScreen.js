@@ -47,7 +47,11 @@ const styles = StyleSheet.create({
     },
 
     dataContainer: {
-        margin: 8
+        margin: 8,
+        borderColor: '#96ceb4',
+        borderWidth: 2,
+        borderRadius: 10,
+        padding: 16
     },
 
     title: {
