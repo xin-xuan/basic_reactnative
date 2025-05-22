@@ -1,11 +1,16 @@
 import React from 'react';
-import { View, Text, Image, FlatList } from 'react-native';
+import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
 import { userData } from '../../data/TryCodeData';
 
 const TryCodeScreen = () => {
     return (
-
         <View style={{ flex: 1 }}>
+            <Text>
+                An array of objects lets you store multiple values in a single variable.
+                It stores a fixed-size sequential collection of elements of the same type.
+                An array is used to store a collection of data, but it is often more useful to think of an array
+                as a collection of variables of the same type.
+            </Text>
 
             <FlatList
                 contentContainerStyle={{ padding: 8 }}
@@ -15,11 +20,7 @@ const TryCodeScreen = () => {
 
                     return (
 
-                        <View style={{
-                            margin: 8,
-                            backgroundColor: 'lavender',
-                            borderWidth: 1
-                        }}>
+                        <View style={styles.containerAnItem}>
                             <Image
                                 source={{ uri: item.imageLink }}
                                 style={{
@@ -29,6 +30,8 @@ const TryCodeScreen = () => {
                             />
 
                             <Text>{item.name}</Text>
+                            <Text>{item.gender}</Text>
+                            <Text>{item.age}</Text>
                         </View>
 
                     )
@@ -38,5 +41,13 @@ const TryCodeScreen = () => {
         </View>
     )
 };
+
+const styles = StyleSheet.create({
+    containerAnItem: {                  
+        margin: 8,
+        backgroundColor: 'lavender',
+        borderWidth: 1
+    }
+});
 
 export default TryCodeScreen;
