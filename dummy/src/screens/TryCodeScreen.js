@@ -14,12 +14,20 @@ const TryCodeScreen = () => {
                 renderItem={({ item }) => {
 
                     return (
-                        
+
                         <View style={{
                             margin: 8,
                             backgroundColor: 'lavender',
                             borderWidth: 1
                         }}>
+                            <Image
+                                source={{ uri: item.imageLink }}
+                                style={{
+                                    width: 100,
+                                    height: 100
+                                }}
+                            />
+
                             <Text>{item.name}</Text>
                         </View>
 
