@@ -1,8 +1,29 @@
 import React from 'react';
-import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
+import { View, Text, StyleSheet, FlatList, Image, useEffect, useState } from 'react-native';
 import { movieData } from '../../data/MovieData';
+import { ShowMovie } from '../components/MovieComponent';
 
 const HomeScreen = () => {
+    const [recommended, setRecommended] = useState([]);
+
+    const compareRating = (a, b) => {
+        const ratingA = a.rating;
+        const ratingB = b.rating;
+
+        if (ratingA > ratingB) {
+            return -1;
+        } else if (ratingA < ratingB) {
+            return 1;
+        } else {
+            return 0;
+        }
+    };
+
+    useEffect(() => {
+        const sortedRecommended = [...movieData].sort(compareRating);
+        setRecommended(sortedRecommended);
+    }, []);
+
     return (
         <View style={styles.mainContainer}>
             <Text>Home Screen</Text>
@@ -27,12 +48,44 @@ const HomeScreen = () => {
                                 <View style={styles.yearContainer}>
                                     <Text>{item.year}</Text>
                                 </View>
+
+                                <Text>{item.rating}</Text>
                             </View>
 
                         </View>
                     )
                 }}
             />
+            ListHeaderComponent = {
+                <View>
+                    <FlatList
+                        horizontal
+                        data={movieData}
+                        keyExtractor={(item) => item.id}
+                        renderItem={({ item }) => {
+                            return (
+                                <ShowMovie
+                                    image={{ uri: item.imageLink }}
+                                    title={item.title}
+                                    viewers={item.viewers}
+                                />
+                            )
+                        }}
+                    />
+                </View>
+            }
+
+            ListFooterComponent = {
+                <Text>
+                    An array of objects lets you store multiple
+                    values in a single variable. It stores a fixed-
+                    size sequential collection of elements of
+                    the same type. An array is used to store a
+                    collection of data,but it is often more useful
+                    to think of an array as a collection of
+                    variables of the same type.
+                </Text>
+            }
 
         </View>
     )
