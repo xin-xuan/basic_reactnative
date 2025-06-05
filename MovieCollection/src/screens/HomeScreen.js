@@ -6,6 +6,7 @@ import { ShowMovie } from '../components/MovieComponent';
 const HomeScreen = () => {
 
     const [recommended, setRecommended] = useState([]);
+    const [mostViewed, setMostViewed] = useState([]);
 
     const compareRating = (a, b) => {
         const ratingA = a.rating;
@@ -20,9 +21,25 @@ const HomeScreen = () => {
         }
     };
 
+    const compareViewers = (movieA, movieB) => {
+        const viewersA = movieA.viewers;
+        const viewersB = movieB.viewers;
+
+        if (viewersA > viewersB) {
+            return -1;
+        } else if (viewersA < viewersB) {
+            return 1;
+        } else {
+            return 0;
+        }
+    };
+
     useEffect(() => {
         const sortedRecommended = [...movieData].sort(compareRating);
         setRecommended(sortedRecommended);
+
+        const sortedMostViewed = [...movieData].sort(compareViewers);
+        setMostViewed(sortedMostViewed);
     }, []);
 
     return (
@@ -43,7 +60,7 @@ const HomeScreen = () => {
                             />
 
                             <View style={styles.movieDescriptionContainer}>
-                                
+
                                 <Text style={styles.title}>{item.title}</Text>
                                 <View style={styles.yearContainer}>
                                     <Text>{item.year}</Text>
@@ -58,9 +75,18 @@ const HomeScreen = () => {
 
                 ListHeaderComponent={
                     <View>
+
+                        <View style={styles.mainCategoryContainer}>
+                            <View style={styles.categoryContainer}>
+                                <Text style={styles.categoryText}>
+                                    Most Viewed
+                                </Text>
+                            </View>
+                        </View>
+
                         <FlatList
                             horizontal
-                            data={movieData}
+                            data={mostViewed}
                             keyExtractor={(item) => item.id}
                             renderItem={({ item }) => {
                                 return (
@@ -72,6 +98,15 @@ const HomeScreen = () => {
                                 )
                             }}
                         />
+
+                        <View style={styles.mainCategoryContainer}>
+                            <View style={styles.categoryContainer}>
+                                <Text style={styles.categoryText}>
+                                    Recommended
+                                </Text>
+                            </View>
+                        </View>
+
                     </View>
                 }
 
@@ -133,6 +168,19 @@ const styles = StyleSheet.create({
         marginTop: 8,
         marginBottom: 8,
         flexDirection: 'row'
+    },
+    mainCategoryContainer: {
+        marginTop: 8,
+        marginLeft: 8,
+        marginRight: 8,
+        flexDirection: 'row'
+    },
+    categoryContainer: {
+        flex: 1
+    },
+    categoryText: {
+        fontSize: 20,
+        fontWeight: 'bold'
     }
 });
 
