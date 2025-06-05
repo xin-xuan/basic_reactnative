@@ -1,9 +1,10 @@
-import React from 'react';
-import { View, Text, StyleSheet, FlatList, Image, useEffect, useState } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
 import { movieData } from '../../data/MovieData';
 import { ShowMovie } from '../components/MovieComponent';
 
 const HomeScreen = () => {
+
     const [recommended, setRecommended] = useState([]);
 
     const compareRating = (a, b) => {
@@ -26,7 +27,6 @@ const HomeScreen = () => {
 
     return (
         <View style={styles.mainContainer}>
-            <Text>Home Screen</Text>
 
             <FlatList
                 data={movieData}
@@ -40,10 +40,10 @@ const HomeScreen = () => {
                             <Image
                                 style={styles.movieImage}
                                 source={{ uri: item.imageLink }}
-
                             />
 
                             <View style={styles.movieDescriptionContainer}>
+                                
                                 <Text style={styles.title}>{item.title}</Text>
                                 <View style={styles.yearContainer}>
                                     <Text>{item.year}</Text>
@@ -55,37 +55,40 @@ const HomeScreen = () => {
                         </View>
                     )
                 }}
-            />
-            ListHeaderComponent = {
-                <View>
-                    <FlatList
-                        horizontal
-                        data={movieData}
-                        keyExtractor={(item) => item.id}
-                        renderItem={({ item }) => {
-                            return (
-                                <ShowMovie
-                                    image={{ uri: item.imageLink }}
-                                    title={item.title}
-                                    viewers={item.viewers}
-                                />
-                            )
-                        }}
-                    />
-                </View>
-            }
 
-            ListFooterComponent = {
-                <Text>
-                    An array of objects lets you store multiple
-                    values in a single variable. It stores a fixed-
-                    size sequential collection of elements of
-                    the same type. An array is used to store a
-                    collection of data,but it is often more useful
-                    to think of an array as a collection of
-                    variables of the same type.
-                </Text>
-            }
+                ListHeaderComponent={
+                    <View>
+                        <FlatList
+                            horizontal
+                            data={movieData}
+                            keyExtractor={(item) => item.id}
+                            renderItem={({ item }) => {
+                                return (
+                                    <ShowMovie
+                                        image={{ uri: item.imageLink }}
+                                        title={item.title}
+                                        viewers={item.viewers}
+                                    />
+                                )
+                            }}
+                        />
+                    </View>
+                }
+
+                ListFooterComponent={
+                    <Text>
+                        An array of objects lets you store multiple
+                        values in a single variable. It stores a fixed-
+                        size sequential collection of elements of
+                        the same type. An array is used to store a
+                        collection of data,but it is often more useful
+                        to think of an array as a collection of
+                        variables of the same type.
+                    </Text>
+                }
+
+            />
+
 
         </View>
     )
@@ -97,7 +100,7 @@ const styles = StyleSheet.create({
     },
 
     flatListContainer: {
-        borderWidth: 8
+        padding: 8
     },
 
     movieImage: {
@@ -128,7 +131,8 @@ const styles = StyleSheet.create({
 
     yearContainer: {
         marginTop: 8,
-        marginBottom: 8
+        marginBottom: 8,
+        flexDirection: 'row'
     }
 });
 

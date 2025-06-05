@@ -2,10 +2,11 @@ import React from "react";
 import { View, Text, Image, StyleSheet } from 'react-native';
 
 export const ShowMovie = (props) => {
+
     const { image, title, viewers } = props;
 
     return (
-        <View style = {StyleSheet.horizontalDataContainer}>
+        <View style = {styles.horizontalDataContainer}>
             <Image
                 style = {styles.movieImage}
                 source = {image}
