@@ -5,6 +5,9 @@ import { Icon } from "react-native-elements";
 export const ShowMovie = (props) => {
 
     const { image, title, viewers } = props;
+    const numberWithCommas = (number) => {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    };
 
     return (
         <View style={styles.horizontalDataContainer}>
@@ -14,6 +17,7 @@ export const ShowMovie = (props) => {
             />
 
             <View style={styles.horizontalTitleContainer}>
+                <Icon name='title' type='material' size={24} />
                 <Text style={styles.horizontalTitle}>
                     {title}
                 </Text>
@@ -26,9 +30,9 @@ export const ShowMovie = (props) => {
             </View>
 
             <View style={styles.viewersContainer}>
-                <Icon name='eye' type='antdesign' size={24}/>
+                <Icon name='eye' type='antdesign' size={24} />
                 <View style={styles.viewersText}>
-                    <Text>{viewers}</Text>
+                    <Text>{numberWithCommas(viewers)}</Text>
                 </View>
             </View>
 
