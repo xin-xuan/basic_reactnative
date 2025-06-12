@@ -66,6 +66,37 @@ const HomeScreen = () => {
                                     <Text>{item.year}</Text>
                                 </View>
 
+                                {
+                                    item.rating === 5 ?
+                                        <Image
+                                            style={styles.movieRating}
+                                            source={require('../../assets/images/five-stars.png')}
+                                        />
+                                    :
+                                    item.rating === 4 ?
+                                        <Image
+                                            style={styles.movieRating}
+                                            source={require('../../assets/images/four-stars.png')}
+                                        />
+                                    :
+                                    item.rating === 3 ?
+                                        <Image
+                                            style={styles.movieRating}
+                                            source={require('../../assets/images/three-stars.png')}
+                                        />
+                                    :
+                                    item.rating === 2 ?
+                                        <Image
+                                            style={styles.movieRating}
+                                            source={require('../../assets/images/two-stars.png')}
+                                        />
+                                    :
+                                    <Image
+                                            style={styles.movieRating}
+                                            source={require('../../assets/images/star.png')}
+                                        />
+                                }
+
                                 <Text>{item.rating}</Text>
                             </View>
 
@@ -181,6 +212,10 @@ const styles = StyleSheet.create({
     categoryText: {
         fontSize: 20,
         fontWeight: 'bold'
+    },
+    movieRating: {
+        width: 100,
+        height: 20
     }
 });
 

@@ -1,25 +1,33 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from 'react-native';
+import { Icon } from "react-native-elements";
 
 export const ShowMovie = (props) => {
 
     const { image, title, viewers } = props;
 
     return (
-        <View style = {styles.horizontalDataContainer}>
+        <View style={styles.horizontalDataContainer}>
             <Image
-                style = {styles.movieImage}
-                source = {image}
+                style={styles.movieImage}
+                source={image}
             />
 
-            <View style = {styles.horizontalTitleContainer}>
-                <Text style = {styles.horizontalTitle}>
+            <View style={styles.horizontalTitleContainer}>
+                <Text style={styles.horizontalTitle}>
                     {title}
                 </Text>
             </View>
 
-            <View style = {styles.viewersContainer}>
-                <View style = {styles.viewersText}>
+            <View style={styles.viewersContainer}>
+                <View style={styles.viewersText}>
+                    <Text>{viewers}</Text>
+                </View>
+            </View>
+
+            <View style={styles.viewersContainer}>
+                <Icon name='eye' type='antdesign' size={24}/>
+                <View style={styles.viewersText}>
                     <Text>{viewers}</Text>
                 </View>
             </View>

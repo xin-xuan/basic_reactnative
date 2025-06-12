@@ -6,8 +6,8 @@ import HomeScreen from './src/screens/HomeScreen';
 const App = () => {
     return (
         <SafeAreaProvider>
-            {/* <HomeScreen /> */}
-            <TryCodeScreen/>
+            <HomeScreen />
+            {/* <TryCodeScreen/> */}
         </SafeAreaProvider>
     )
 }
