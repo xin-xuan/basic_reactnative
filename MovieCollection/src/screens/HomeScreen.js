@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, FlatList, Image } from 'react-native';
 import { movieData } from '../../data/MovieData';
 import { ShowMovie } from '../components/MovieComponent';
+import { Icon } from 'react-native-elements';
 
 const HomeScreen = () => {
 
@@ -61,43 +62,51 @@ const HomeScreen = () => {
 
                             <View style={styles.movieDescriptionContainer}>
 
-                                <Text style={styles.title}>{item.title}</Text>
+                                <View style={styles.titleContainer}>
+                                    <Icon name='title' type='material' size={24} />
+                                    <Text style={styles.title}>{item.title}</Text>
+                                </View>
+
                                 <View style={styles.yearContainer}>
+                                    <Icon name='calendar' type='antdesign' size={24} />
                                     <Text>{item.year}</Text>
                                 </View>
 
-                                {
-                                    item.rating === 5 ?
-                                        <Image
-                                            style={styles.movieRating}
-                                            source={require('../../assets/images/five-stars.png')}
-                                        />
-                                    :
-                                    item.rating === 4 ?
-                                        <Image
-                                            style={styles.movieRating}
-                                            source={require('../../assets/images/four-stars.png')}
-                                        />
-                                    :
-                                    item.rating === 3 ?
-                                        <Image
-                                            style={styles.movieRating}
-                                            source={require('../../assets/images/three-stars.png')}
-                                        />
-                                    :
-                                    item.rating === 2 ?
-                                        <Image
-                                            style={styles.movieRating}
-                                            source={require('../../assets/images/two-stars.png')}
-                                        />
-                                    :
-                                    <Image
-                                            style={styles.movieRating}
-                                            source={require('../../assets/images/star.png')}
-                                        />
-                                }
+                                <View style={styles.titleContainer}>
+                                    <Icon name='star-rate' type='material' size={24} />
 
-                                <Text>{item.rating}</Text>
+                                    {
+                                        item.rating === 5 ?
+
+                                            <Image
+                                                style={styles.movieRating}
+                                                source={require('../../assets/images/five-stars.png')}
+                                            />
+                                            :
+                                            item.rating === 4 ?
+                                                <Image
+                                                    style={styles.movieRating}
+                                                    source={require('../../assets/images/four-stars.png')}
+                                                />
+                                                :
+                                                item.rating === 3 ?
+                                                    <Image
+                                                        style={styles.movieRating}
+                                                        source={require('../../assets/images/three-stars.png')}
+                                                    />
+                                                    :
+                                                    item.rating === 2 ?
+                                                        <Image
+                                                            style={styles.movieRating}
+                                                            source={require('../../assets/images/two-stars.png')}
+                                                        />
+                                                        :
+                                                        <Image
+                                                            style={styles.movieRating}
+                                                            source={require('../../assets/images/star.png')}
+                                                        />
+                                    }
+                                </View>
                             </View>
 
                         </View>
@@ -212,6 +221,10 @@ const styles = StyleSheet.create({
     categoryText: {
         fontSize: 20,
         fontWeight: 'bold'
+    },
+    titleContainer: {
+        flexDirection: 'row',
+        alignItems: 'center'
     },
     movieRating: {
         width: 100,

@@ -17,16 +17,9 @@ export const ShowMovie = (props) => {
             />
 
             <View style={styles.horizontalTitleContainer}>
-                <Icon name='title' type='material' size={24} />
                 <Text style={styles.horizontalTitle}>
                     {title}
                 </Text>
-            </View>
-
-            <View style={styles.viewersContainer}>
-                <View style={styles.viewersText}>
-                    <Text>{viewers}</Text>
-                </View>
             </View>
 
             <View style={styles.viewersContainer}>
