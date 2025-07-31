@@ -5,13 +5,11 @@ import HomeScreen from './src/screens/HomeScreen';
 import MainNavigator from './src/navigator/MainNavigator';
 
 const App = () => {
-    return (
-        <SafeAreaProvider>
-            <HomeScreen />
-            {/* <TryCodeScreen/> */}
-            {/* <MainNavigator /> */}
-        </SafeAreaProvider>
-    )
+  return (
+    <SafeAreaProvider>
+      <MainNavigator />
+    </SafeAreaProvider>
+  )
 }
 
 export default App;

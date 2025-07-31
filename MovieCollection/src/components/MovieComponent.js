@@ -1,37 +1,6 @@
 import React from "react";
-import { View, Text, Image, StyleSheet } from 'react-native';
-import { Icon } from "react-native-elements";
-
-export const ShowMovie = (props) => {
-
-    const { image, title, viewers } = props;
-    const numberWithCommas = (number) => {
-        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-    };
-
-    return (
-        <View style={styles.horizontalDataContainer}>
-            <Image
-                style={styles.movieImage}
-                source={image}
-            />
-
-            <View style={styles.horizontalTitleContainer}>
-                <Text style={styles.horizontalTitle}>
-                    {title}
-                </Text>
-            </View>
-
-            <View style={styles.viewersContainer}>
-                <Icon name='eye' type='antdesign' size={24} />
-                <View style={styles.viewersText}>
-                    <Text>{numberWithCommas(viewers)}</Text>
-                </View>
-            </View>
-
-        </View>
-    )
-};
+import { View, Image, Text, StyleSheet } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 const styles = StyleSheet.create({
     horizontalDataContainer: {
@@ -65,3 +34,40 @@ const styles = StyleSheet.create({
         marginLeft: 8
     }
 });
+
+const numberWithCommas = (number) => {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+export const ShowMovie = (props) => {
+
+    const { image, title, viewers } = props;
+
+    return (
+        <View style={styles.horizontalDataContainer}>
+
+            <Image
+                style={styles.movieImage}
+                source={image}
+            />
+
+            <View style={styles.horizontalTitleContainer}>
+                <Text style={styles.horizontalTitle}>
+                    {title}
+                </Text>
+            </View>
+
+            <View style={styles.viewersContainer}>
+
+                <Icon name="eye" type="ionicon" size={20} />
+
+                <View style={styles.viewersText}>
+                    <Text>{numberWithCommas(viewers)}</Text>
+                </View>
+
+            </View>
+
+        </View>
+    )
+
+};

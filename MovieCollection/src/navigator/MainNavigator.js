@@ -1,29 +1,30 @@
-import React from 'react'
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import DetailMovieScreen from '../screens/DetailMovieScreen';
 import HomeScreen from '../screens/HomeScreen';
+import DetailMovieScreen from '../screens/DetailMovieScreen';
 
 const Stack = createStackNavigator();
 
 const MainNavigator = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home">
+            <Stack.Navigator initialRouteName='Home'>
 
                 <Stack.Screen
-                    name="Home"
+                    name='Home'
                     component={HomeScreen}
+                    options={{ headerShown: true }}
                 />
 
                 <Stack.Screen
-                    name="DetailMovie"
+                    name='DetailMovie'
                     component={DetailMovieScreen}
+                    options={{ headerShown: true }}
                 />
 
             </Stack.Navigator>
-        </NavigationContainer>
-
+        </NavigationContainer >
     )
 };
 
