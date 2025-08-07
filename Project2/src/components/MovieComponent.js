@@ -92,24 +92,24 @@ export const MovieExplanation = (props) => {
                             rating === 4 ?
                                 <Image
                                     style={styles.ratingImage}
-                                    source={require('../../assets/images/five-stars.png')}
+                                    source={require('../../assets/images/four-stars.png')}
                                 />
                                 :
                                 rating === 3 ?
                                     <Image
                                         style={styles.ratingImage}
-                                        source={require('../../assets/images/five-stars.png')}
+                                        source={require('../../assets/images/three-stars.png')}
                                     />
                                     :
                                     rating === 2 ?
                                         <Image
                                             style={styles.ratingImage}
-                                            source={require('../../assets/images/five-stars.png')}
+                                            source={require('../../assets/images/two-stars.png')}
                                         />
                                         :
                                         <Image
                                             style={styles.ratingImage}
-                                            source={require('../../assets/images/five-stars.png')}
+                                            source={require('../../assets/images/star.png')}
 
                                         />
                         :

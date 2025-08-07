@@ -29,6 +29,13 @@ const DetailMovieScreen = ({ route }) => {
                     name = 'Release year'
                     value = {movie.year}
                 />
+
+                <MovieExplanation
+                    name = 'Rating'
+                    isRating = {true}
+                    rating = {movie.rating}
+                    value = {movie.rating}
+                />
             </View>
         </View>
     )
