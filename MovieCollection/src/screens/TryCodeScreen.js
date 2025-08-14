@@ -1,15 +1,17 @@
 import React from 'react';
-import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
 import { userData } from '../../data/TryCodeData';
+import { View, FlatList, Text, Image, StyleSheet } from 'react-native';
 
 const TryCodeScreen = () => {
+
     return (
         <View style={{ flex: 1 }}>
+
             <Text>
-                An array of objects lets you store multiple values in a single variable.
-                It stores a fixed-size sequential collection of elements of the same type.
-                An array is used to store a collection of data, but it is often more useful to think of an array
-                as a collection of variables of the same type.
+                An array of objects lets you store multiple values in a single variable. It
+                stores a fixed-size sequential collection of elements of the same type. An
+                array is used to store a collection of data, but it is often more useful to
+                think of an array as a collection of variables of the same type.
             </Text>
 
             <FlatList
@@ -17,19 +19,17 @@ const TryCodeScreen = () => {
                 data={userData}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => {
-
                     return (
-
                         <View style={
                             [
-                                styles.containerAnItem,
-                                {
+                                styles.containerAnItem, {
                                     backgroundColor:
                                         item.gender.toLowerCase() === 'male' ?
                                             'moccasin' : 'lavender'
                                 }
                             ]
                         }>
+
                             <Image
                                 source={{ uri: item.imageLink }}
                                 style={{
@@ -43,31 +43,24 @@ const TryCodeScreen = () => {
                             <Text>{item.age}</Text>
 
                             {
-                                item.age >= 6 && item.age <= 12 ?
-                                    <Text>
-                                        Child
-                                    </Text>
+                                item.age < 13 ?
+                                    <Text>Child</Text>
                                     :
-                                    item.age >= 13 && item.age <= 17 ?
-                                        <Text>
-                                            Teen
-                                        </Text>
+                                    item.age < 18 ?
+                                        <Text>Teen</Text>
                                         :
-                                        item.age >= 18 && item.age <= 64 ?
-                                            <Text>
-                                                Adult
-                                            </Text>
-                                            :
-                                            null
+                                        <Text>Adult</Text>
                             }
-                        </View>
 
+
+                        </View>
                     )
                 }}
-
             />
-        </View>
+
+        </View >
     )
+
 };
 
 const styles = StyleSheet.create({

@@ -5,7 +5,9 @@ import { ShowMovie } from '../components/MovieComponent';
 import { Icon } from 'react-native-elements';
 import { ButtonComponent } from '../components/ButtonComponent';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = (props) => {
+
+    const { navigation } = props;
 
     const [recommended, setRecommended] = useState([]);
     const [mostViewed, setMostViewed] = useState([]);
