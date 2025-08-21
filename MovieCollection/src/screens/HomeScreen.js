@@ -52,7 +52,7 @@ const HomeScreen = (props) => {
 
         const threeMostViewed = [];
 
-        for (let i = 0; i < 3; i++){
+        for (let i = 0; i < 0; i++) {
             threeMostViewed.push(sortedMostViewed[i])
         }
 
@@ -143,6 +143,13 @@ const HomeScreen = (props) => {
                         </View>
                     )
                 }}
+                ListEmptyComponent={
+                    <View style={{ alignItems: 'center' }}>
+                        <Text>
+                            No items in this category.
+                        </Text>
+                    </View>
+                }
 
                 ListHeaderComponent={
                     <View>
@@ -168,6 +175,15 @@ const HomeScreen = (props) => {
                                     />
                                 )
                             }}
+
+                            contentContainerStyle={{ flex: mostViewed.length === 0 ? 1 : null }}
+                            ListEmptyComponent={
+                                <View style={{ alignItems: 'center', flex: 1 }}>
+                                    <Text>
+                                        No items in this category.
+                                    </Text>
+                                </View>
+                            }
                         />
 
                         <View style={styles.mainCategoryContainer}>
