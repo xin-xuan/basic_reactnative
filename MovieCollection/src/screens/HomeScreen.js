@@ -50,6 +50,14 @@ const HomeScreen = (props) => {
         const sortedMostViewed = [...movieData].sort(compareViewers);
         setMostViewed(sortedMostViewed);
 
+        const threeMostViewed = [];
+
+        for (let i = 0; i < 3; i++){
+            threeMostViewed.push(sortedMostViewed[i])
+        }
+
+        setMostViewed(threeMostViewed)
+
     }, []);
 
     return (
