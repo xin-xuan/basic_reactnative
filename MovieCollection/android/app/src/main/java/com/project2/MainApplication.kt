@@ -1,4 +1,4 @@
-package com.project2
+package com.moviecollection
 
 import android.app.Application
 import com.facebook.react.PackageList
