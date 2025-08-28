@@ -1,9 +1,10 @@
 import { View, Text, FlatList, Image, StyleSheet } from 'react-native'
 import React from 'react'
+import { ShowMovie } from '../components/MovieComponent';
 
 const MostViewedScreen = (props) => {
 
-    const {route} = props;
+    const { route } = props;
     const sortedMostViewed = route.params.allMostViewed;
 
     return (
@@ -12,15 +13,15 @@ const MostViewedScreen = (props) => {
                 contentContainerStyle={styles.mainDataContainer}
                 data={sortedMostViewed}
                 keyExtractor={(item) => item.id}
+                numColumns={2}
+                key={2}
                 renderItem={({ item }) => {
                     return (
-                        <View style={styles.movieContainer}>
-                            <Image
-                                style={styles.movieImage}
-                                source={{ uri: item.imageLink }}
-
-                            />
-                        </View>
+                        <ShowMovie
+                            image={{ uri: item.imageLink }}
+                            title={item.title}
+                            viewers={item.viewers}
+                        />
                     )
                 }}
             />

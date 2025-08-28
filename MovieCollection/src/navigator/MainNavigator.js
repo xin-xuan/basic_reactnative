@@ -27,7 +27,7 @@ const MainNavigator = () => {
                 <Stack.Screen
                     name="MostViewed"
                     component={MostViewedScreen}
-/>
+                />
 
             </Stack.Navigator>
         </NavigationContainer >
