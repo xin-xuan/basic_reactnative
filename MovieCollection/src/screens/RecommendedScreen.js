@@ -19,8 +19,10 @@ const RecommendedScreen = (props) => {
                             image={{ uri: item.imageLink }}
                             title={item.title}
                             viewers={item.viewers}
+                            isRecommended={true}
+                            rating={item.rating}
                         />
-                    )
+            )
                 }}
             />
         </View>

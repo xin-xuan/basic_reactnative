@@ -8,7 +8,7 @@ const numberWithCommas = (number) => {
 
 export const ShowMovie = (props) => {
 
-    const { image, title, viewers, isHome } = props;
+    const { image, title, viewers, isHome, rating, isRecommended } = props;
 
     return (
 
@@ -16,7 +16,7 @@ export const ShowMovie = (props) => {
             styles.horizontalDataContainer,
             { flex: isHome ? null : 1 }
         ]}>
-
+            
             <Image
                 style={styles.movieImage}
                 source={image}
@@ -28,16 +28,52 @@ export const ShowMovie = (props) => {
                 </Text>
             </View>
 
-            <View style={styles.viewersContainer}>
+            {
+                isRecommended ?
+                    <View>
+                        {
+                            rating === 5 ?
+                                <Image
+                                    style={styles.ratingImage}
+                                    source={require('../../assets/images/five-stars.png')}
+                                />
+                                :
+                                rating === 4 ?
+                                    <Image
+                                        style={styles.ratingImage}
+                                        source={require('../../assets/images/four-stars.png')}
+                                    />
+                                    :
+                                    rating === 3 ?
+                                        <Image
+                                            style={styles.ratingImage}
+                                            source={require('../../assets/images/three-stars.png')}
+                                        />
+                                        :
+                                        rating === 2 ?
+                                            <Image
+                                                style={styles.ratingImage}
+                                                source={require('../../assets/images/two-stars.png')}
+                                            />
+                                            :
+                                            <Image
+                                                style={styles.ratingImage}
+                                                source={require('../../assets/images/star.png')}
+                                            />
 
-                <Icon name="eye" type="ionicon" size={20} />
+                        }
+                    </View>
+                    :
+                    <View style={styles.viewersContainer}>
 
-                <View style={styles.viewersText}>
-                    <Text>{numberWithCommas(viewers)}</Text>
-                </View>
+                        <Icon name="eye" type="ionicon" size={20} />
 
-            </View>
+                        <View style={styles.viewersText}>
+                            <Text>{numberWithCommas(viewers)}</Text>
+                        </View>
 
+                    </View>
+            }
         </View>
     )
 
