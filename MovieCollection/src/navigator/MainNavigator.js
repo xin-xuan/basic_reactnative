@@ -67,6 +67,18 @@ const MainNavigator = () => {
                 <Stack.Screen
                     name="Recommended"
                     component={RecommendedScreen}
+                    options={{
+                        title: 'Recommended',
+                        headerStyle: {
+                            backgroundColor: '#65c3ba'
+                        },
+                        headerTitleStyle: {
+                            color: 'white',
+                            fontSize: 24
+                        },
+                        headerTitleAlign: 'left',
+                        headerLeft: null
+                    }}
                 />
 
             </Stack.Navigator>
