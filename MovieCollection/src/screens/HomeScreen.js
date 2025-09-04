@@ -207,6 +207,15 @@ const HomeScreen = (props) => {
                                 </Text>
                             </View>
                         </View>
+                        <View style={styles.mainCategoryContainer}>
+                            <View style={styles.seeAllContainer}>
+                                <TouchableOpacity
+                                    onPress={() => navigation.navigate('Recommended')}
+                                >
+                                    <Text style={styles.seeAllText}>See All</Text>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
 
                     </View>
                 }
