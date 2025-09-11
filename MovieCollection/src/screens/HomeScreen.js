@@ -58,12 +58,13 @@ const HomeScreen = (props) => {
         setAllMostViewed(sortedMostViewed);
         setAllRecommended(sortedRecommended);
 
-        for (let i = 0; i < 0; i++) {
+        for (let i = 0; i < 3; i++) {
             threeMostViewed.push(sortedMostViewed[i])
-
+            threeRecommended.push(sortedRecommended[i])
         }
 
         setMostViewed(threeMostViewed)
+        setRecommended(threeRecommended)
 
     }, []);
 
