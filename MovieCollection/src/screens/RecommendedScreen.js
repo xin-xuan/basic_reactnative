@@ -3,7 +3,8 @@ import React from 'react'
 import { ShowMovie } from '../components/MovieComponent';
 
 const RecommendedScreen = (props) => {
-    const { route } = props;
+    const { route, navigation } = props;
+
     const sortedRecommended = route.params.allRecommended;
     return (
         <View>
@@ -21,6 +22,7 @@ const RecommendedScreen = (props) => {
                             viewers={item.viewers}
                             isRecommended={true}
                             rating={item.rating}
+                            onPress={() => navigation.navigate('DetailMovie', { item })}
                         />
             )
                 }}

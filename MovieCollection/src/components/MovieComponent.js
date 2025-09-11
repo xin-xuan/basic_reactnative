@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Image, Text, StyleSheet } from 'react-native';
 import { Icon } from 'react-native-elements';
+import { ButtonComponent } from "./ButtonComponent";
 
 const numberWithCommas = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -16,7 +17,7 @@ export const ShowMovie = (props) => {
             styles.horizontalDataContainer,
             { flex: isHome ? null : 1 }
         ]}>
-            
+
             <Image
                 style={styles.movieImage}
                 source={image}
@@ -73,6 +74,15 @@ export const ShowMovie = (props) => {
                         </View>
 
                     </View>
+            }
+
+            {
+                isHome ?
+                    null
+                    :
+                    <ButtonComponent
+                        {...props}
+                    />
             }
         </View>
     )
